@@ -12,3 +12,4 @@
 .idea/dataSources.xml
 log/development.log
 tmp/pids/server.pid
+public/assets/
