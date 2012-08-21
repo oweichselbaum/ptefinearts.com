@@ -1,0 +1,16 @@
+= semantic_form_for @artist do |f| 
+  = f.inputs do
+    = f.input :firstname, :as => :string, :label => 'First Name'
+    = f.input :lastname, :as => :string, :label => 'Last Name'
+    = f.input :active, :as => :boolean, :label => 'Active'
+  = f.actions do
+    = f.action :submit, :as => :button, :label => 'Update'
+%section.thumbs
+  - @artistpieces.each_slice(3) do |piecegroup|
+    %ul
+      - piecegroup.each do |piece|
+        %li
+          = image_tag(image_path("#{piece.piece.url}"), :alt => piece.id)
+          = link_to 'Edit', edit_artist_piece_path(@artist, piece.id) 
+          |
+          = link_to 'Delete', artist_piece_path(@artist, piece.id), :method => :delete, :confirm => 'Are you sure?' 

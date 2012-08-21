@@ -1,0 +1,23 @@
+#biographyshow
+  %aside
+    %h3
+      = "#{@artist.firstname} #{@artist.lastname}"
+    %nav
+      %li
+        = link_to 'Back to artists', artists_path, :id => 'backto', :remote => true, :class => 'ajaxtransition'
+  #words
+    %p
+      = @biography.displayname
+      %br
+      = @biography.livesin
+    %p
+      = @biography.para1
+    %p
+      = @biography.para2
+    %p
+      = @biography.para3
+    %p
+      = @biography.para4
+    %p
+      = @biography.para5
+

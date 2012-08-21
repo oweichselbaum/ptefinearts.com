@@ -1,0 +1,16 @@
+#scroller
+  - 7.times do
+    - @orderedpieces.each do |piece|
+      .image.hidden
+        = image_tag piece.piece.url, :alt => "#{piece.title}"
+        %p.pieceinfo
+          %span.artistname
+            = "#{piece.artist.firstname} #{piece.artist.lastname}"
+          %br
+          = piece.title
+          %br
+          = piece.year
+          %br
+          = piece.medium
+          %br
+          = piece.dimensions

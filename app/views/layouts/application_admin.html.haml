@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title PTE Fine Arts | #{@title}  
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %header#main_header
+      #logo
+        = link_to image_tag('common/logo.png', :alt => 'PTE Fine Arts'), home_path
+    .clear
+    %aside#adminSide
+      %nav
+        %ul
+          %li
+            = link_to 'Artists', admin_artists_path, :class => 'ajaxtransition', :remote => true 
+          %li
+            = link_to 'Events', admin_events_path, :class => 'ajaxtransition', :remote => true 
+          %li
+            = link_to 'Logout', destroy_admin_session_path, :method => :delete
+    %section{:id => @actionClass, :class => 'main_content'}
+      = yield

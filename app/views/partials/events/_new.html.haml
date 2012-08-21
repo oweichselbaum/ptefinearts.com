@@ -1,0 +1,8 @@
+= semantic_form_for @event do |f|
+  = f.inputs do
+    = f.input :gallery, :as => :string, :label => 'Venue'
+    = f.input :title, :as => :string, :label => 'Event Title'
+    = f.input :linkurl, :as => :string, :label => 'Paste URL Here'
+    = f.input :event, :as => :file, :label => 'Event Image'
+  = f.actions do
+    = f.submit 'Add Event'

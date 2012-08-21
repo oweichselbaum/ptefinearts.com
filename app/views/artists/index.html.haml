@@ -1,0 +1,20 @@
+- @firstartists.each_slice((((@artistcount - (@artistcount % 5)) / 5) + 1)) do |artistgroup|
+  .artistcolumn
+    %ul
+      - artistgroup.each do |artist|
+        - if artist.active?
+          %li
+            = link_to "#{artist.firstname} #{artist.lastname}", artist_path(artist.id), :class => 'active' 
+        - else
+          %li
+            = link_to "#{artist.firstname} #{artist.lastname}", '#', :class => 'inactive' 
+- @lastartists.each_slice((@artistcount - (@artistcount % 5)) / 5) do |artistgroup|
+  .artistcolumn
+    %ul
+      - artistgroup.each do |artist|
+        - if artist.active?
+          %li
+            = link_to "#{artist.firstname} #{artist.lastname}", artist_path(artist.id), :class => 'active'
+        - else
+          %li
+            = link_to "#{artist.firstname} #{artist.lastname}", '#', :class => 'inactive'

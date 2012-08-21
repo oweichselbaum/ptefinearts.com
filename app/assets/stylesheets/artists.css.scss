@@ -1,0 +1,237 @@
+// Place all the styles related to the Artists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'protractor';
+
+#newartist {
+  label {
+    font-size: 1em;
+    color: #c58f40;
+    text-transform: uppercase;
+  }
+  @include column(13, last);
+}
+
+.main_content form {
+  padding-top: 12px;
+  .inputs input {
+    width: 200px;
+    font-size: 1.2em;
+  }
+}
+
+#artistsindex {
+  padding-top: 28px;
+  ul {
+    width: 100%;
+    display: table;
+    margin-bottom: 28px;
+    li {
+      display: inline-block;
+      width: 187px;
+      list-style-type: none;
+      text-align: left;
+      color: #9a9c9e;
+      font-size: 1.1em;
+      font-family: helveticaneue, lucida grande, arial, verdana, sans-serif;
+      a {
+        color: #9a9c9e;
+        font-size: 1em;
+        text-decoration: none;
+        font-family: helveticaneue, lucida grande, arial, verdana, sans-serif;
+      }
+      a.active:hover {
+        color: #be832b;
+      }
+      a.inactive {
+        cursor: auto;
+      }
+    }
+  }
+  .artistcolumn {
+    width: 185px;
+    float: left;
+    li {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+#artistshow {
+  aside {
+    position: relative;
+    left: -15px;
+    #backto {
+      font-size: 1.1em;
+    }
+    margin-top: 48px;
+    @include column(7); 
+    h3 {
+      text-align: right;
+      font-size: 1.1em;
+      color: #be832b;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        text-align: right;
+        margin-bottom: 10px;
+        a {
+          color: #414142;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #be832b; 
+        }
+        a.inactive {
+          cursor: auto;
+          color: #414142;
+        }
+      }
+    }
+  } 
+  .Miller.thumbs {
+    width: 470px;
+    ul {
+      margin-bottom: 4px;
+      li {
+        margin-right: 8px;
+      }
+      li:nth-of-type(1) {
+        img {
+          margin-bottom: 4px;
+        }
+      }
+      li:nth-of-type(2) {
+        img {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+  .thumbs {
+    ul {
+      margin-bottom: 18px;
+      li {
+        display: inline;
+        list-style-type: none;
+        margin-right: 22px;
+      }
+    }
+    .eachthumb {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 12.5px;
+      width: 175px;
+      height: 175px;
+    }
+    margin-top: 48px;
+    @include column (15, last);
+    @include prepend(1);
+  }
+  .biography {
+    @include column(11, last);
+    margin-left: 80px;
+    margin-top: 46px;
+    display: none;
+    p {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+#artistedit {
+  @include column(13, last);
+  .thumbs {
+    ul {
+      margin-bottom: 18px;
+      li {
+        list-style-type: none;
+        img {
+          height: 17%;
+          width: 17%;
+          display: block;
+        }
+        margin-right: 22px;
+      }
+    }
+    margin-top: 48px;
+    @include column (13, last);
+    @include prepend(2);
+  }
+  .biographyedit textarea {
+    width: 204px;
+    height: 100px;
+    resize: none;
+  }
+}
+
+#pieceshow {
+  aside {
+    position: relative;
+    left: -15px;
+    margin-top: 48px;
+    @include column(8);
+    h3 {
+      text-align: right;
+      font-size: 1.1em;
+      color: #be832b;
+    }
+    ul {
+      li.title {
+        font-style: italic;
+      }
+      li {
+        list-style-type: none;
+        text-align: right;
+        margin-bottom: 2px;
+        a {
+          color: #414142;
+          text-decoration: none;
+        }
+      }
+    }
+    nav {
+      margin-top: 32px;
+    }
+  }
+  section {
+    margin-top: 48px;
+    @include prepend(2);
+    @include column(13, last);
+  }
+  a.inactive:hover {
+    color: #5D481C;
+    cursor: auto;
+  }
+  .imagenav {
+    ul {
+      li {
+        list-style-type: none;
+        display: inline;
+      }
+    }
+  }
+}
+
+#artistedit {
+  .biography {
+    p:hover {
+      cursor: pointer;
+    }
+    textarea {
+      width: 204px;
+      height: 100px;
+      resize: none;
+    }
+  }
+}
+
+table {margin-bottom:1.4em;width: 65%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tbody tr:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}

@@ -1,0 +1,37 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'protractor';
+
+#eventsedit {
+  @include column(13, last);  
+  textarea {
+    resize: none;
+    width: 204px;
+    height: 100px;
+  }
+}
+
+#eventsnew {
+  @include column(13, last);
+  textarea {
+    resize: none;
+    width: 204px;
+    height: 100px;
+  }
+}
+
+#eventsindex {
+  @include prepend(10);
+  padding-left: 319px;
+  padding-top: 18px;
+  li {
+    list-style-type: none;
+    margin-bottom: 40px;
+  }
+  .eventimage {
+    float: left;
+    margin-right: 18px;
+  }
+}

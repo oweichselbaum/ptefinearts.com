@@ -1,0 +1,14 @@
+%ul
+  - @artists.each do |artist| 
+    %li.eachartist
+      %span.artistname
+        = "#{artist.firstname} #{artist.lastname}"
+      %nav
+        %ul
+          %li
+            = link_to 'Edit', edit_artist_path(artist.id)
+          %li
+            = link_to 'Add Piece', new_artist_piece_path(artist)
+          %li
+            = link_to 'Delete', artist, :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Add New Artist', new_artist_path

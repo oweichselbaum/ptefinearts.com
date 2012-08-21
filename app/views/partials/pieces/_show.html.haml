@@ -1,0 +1,43 @@
+#pieceshow
+  %aside 
+    %h3
+      = "#{@artist.firstname} #{@artist.lastname}"
+    %ul.details
+      %li.title
+        = @piece.title
+      %li.year
+        = @piece.year
+      %li.medium
+        = @piece.medium
+      %li.dimensions
+        = @piece.dimensions
+      %li.edition
+        = @piece.edition
+    %nav
+      %ul
+        %li
+          = link_to 'Arrange a viewing', contact_path, :class => 'ajaxtransition', :remote => true 
+        %li
+          = link_to "Back to #{@artist.firstname} #{@artist.lastname}'s works", artist_path(@artist), :id => 'backto', :class => 'ajaxtransition', :remote => true
+        %li
+          = link_to 'Back to artists', artists_path, :class => 'ajaxtransition', :remote => true
+  %section
+    %nav.imagenav
+      %ul
+        %li 
+          - if @piece == @firstpiece 
+            = link_to 'Previous', '#', :class => 'inactive'
+          - else
+            = link_to 'Previous', artist_piece_path(@artist, @artistpieces[@artistpieces.index(@piece) - 1]), :class => 'active ajaxtransition', :remote => true
+        %li 
+          &#124;
+        %li
+          = "#{@artistpieces.index(@piece) + 1} / #{@artistpieces.count}"
+        %li 
+          &#124; 
+        %li
+          - if @piece == @lastpiece
+            = link_to 'Next', '#', :class => 'inactive'
+          - else
+            = link_to 'Next', artist_piece_path(@artist, @artistpieces[@artistpieces.index(@piece) + 1]), :class => 'active ajaxtransition', :remote => true
+    = image_tag image_path(@piece.piece.url), :alt => "Piece #{@piece.id}"

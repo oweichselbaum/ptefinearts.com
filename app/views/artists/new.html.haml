@@ -1,0 +1,6 @@
+= semantic_form_for @artist do |f|
+  = f.inputs do
+    = f.input :firstname, :as => :string, :label => 'First Name' 
+    = f.input :lastname, :as => :string, :label => 'Last Name'
+  = f.actions do
+    = f.action :submit, :as => :button, :label => 'New Artist'

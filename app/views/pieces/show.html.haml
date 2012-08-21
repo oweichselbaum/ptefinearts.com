@@ -1,0 +1,22 @@
+%aside 
+  %h3
+    = "#{@artist.firstname} #{@artist.lastname}"
+  %ul.details
+    %li.title
+      = @piece.title
+    %li.year
+      = @piece.year
+    %li.medium
+      = @piece.medium
+    %li.dimensions
+      = @piece.dimensions
+  %nav
+    %ul
+      %li
+        = link_to 'Arrange a viewing', '#'
+      %li
+        = link_to "Back to #{@artist.firstname} #{@artist.lastname}'s works", artist_path(@artist), :id => 'backto'
+      %li
+        = link_to 'Back to artists', artists_path
+%section
+  = image_tag image_path(@piece.piece.url), :alt => "Piece #{@piece.id}"

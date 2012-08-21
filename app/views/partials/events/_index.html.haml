@@ -1,0 +1,10 @@
+#eventsindex
+  %ul
+    - @events.each do |event|
+      %li.newWindow
+        = link_to image_tag(event.event.url, :alt => "Event #{event.id}"), event.linkurl, :class => 'eventimage'
+        = link_to(event.linkurl) do 
+          = event.gallery
+          %br
+          = event.title
+        .clear

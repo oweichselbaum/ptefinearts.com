@@ -1,0 +1,12 @@
+#newartist
+  = semantic_form_for [@artist, @piece], :html => { :multipart => true } do |f|
+    = f.inputs do
+      = f.input :title, :as => :string, :label => 'Title'
+      = f.input :year, :as => :number, :label => 'Year'
+      = f.input :medium, :as => :string, :label => 'Medium'
+      = f.input :dimensions, :as => :string, :label => 'Dimensions'
+      = f.input :edition, :as => :string, :label => 'Edition'
+      = f.input :piece, :as => :file, :label => 'Image'
+      = f.input :thumbnail, :as => :file, :label => 'Thumbnail'
+    = f.actions do
+      = f.submit 'Add Piece'

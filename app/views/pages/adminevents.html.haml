@@ -1,0 +1,14 @@
+%table
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td 
+          = image_tag image_path(event.event.url), :alt => 'Event Image' 
+        %td
+          = link_to 'Edit', edit_event_path(event.id) 
+          |
+          = link_to 'Delete', event, :method => :delete, :confirm => 'Are you sure?' 
+  %tfoot
+    %tr
+      %td
+        = link_to 'New Event', new_event_path

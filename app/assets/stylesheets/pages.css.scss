@@ -1,0 +1,206 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'protractor';
+
+@font-face {
+  font-family: helveticaneue;
+  src: url('HelveticaNeueLTStd-Lt.otf');
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+html {
+  background-color: #F6F6F6;
+}
+
+body {
+  @include container;
+  width: 950px;
+  background-color: #f6f6f6;
+  font-family: helveticaneue, lucida grande, arial, verdana, sans-serif;
+  padding-top: 190px;
+  a {
+    color: #5d481c;
+    text-decoration: none;
+    font-family: helveticaneue, lucida grande, arial, verdana, sans-serif;
+  }
+  a:hover {
+    color: #be832b;
+  }
+}
+
+#scroller {
+  margin-top: 18px;
+  .image {
+    float: left; 
+    margin-right: 18px;
+    p {
+      text-align: right;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+#main_header {
+  #logo {
+    @include column(8);
+    position: relative;
+    left: 0;
+  }
+  nav {
+    @include column(14, last);
+    position: relative;
+    top: 7px;
+    ul {
+      li {
+        display: inline;
+        list-style-type: none;
+        margin-right: 12px;
+        a {
+          color: #5d481c;
+          text-decoration: none;
+          font-family: helveticaneue, lucida grande, arial, verdana, sans-serif;
+        }
+        a:hover {
+          color: #be832b;
+        }
+      }
+    }
+  }
+}
+
+#about {
+  padding-top: 28px;
+  p {
+    margin-top: 18px;
+  }
+  #lefty {
+    @include prepend(10);
+    @include column(6);
+    padding-left: 319px;
+  }
+  #righty {
+    @include column(6, last); 
+    margin-left: 22px;
+  }
+}
+
+#adminSide {
+  @include column(8);
+  margin-right: 30px;
+  nav {
+    position: relative;
+    left: -13px;
+    ul {
+      li {
+        margin-top: 12px;
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: #5d481c;
+          text-transform: uppercase;
+          text-align: right;
+          display: table-cell;
+          @include span(8);
+        }
+        a:hover {
+          color: #be832b;
+        }
+      }
+    }
+  }
+}
+
+#response {
+  text-align: center;
+  position: relative;
+  height: 80%;
+  width: 299px;
+  margin: 0 auto;
+  #landing {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -24px;
+    @include opacity(0.5);
+  }
+  #landing:hover {
+    @include opacity(1);
+  }
+}
+
+
+
+#scroller {
+  height: 500px;
+  overflow: hidden;
+  li {
+    list-style-type: none;
+  }
+}
+
+#adminartists {
+  padding-top: 12px;
+  @include column(15, last);
+  ul {
+    li {
+      list-style-type: none;
+      display: inline;
+      margin-right: 8px;
+    }
+    span.artistname {
+      float: left;
+      width: 140px;
+    }
+    li.eachartist {
+      display: inline-block;
+      width: 48%;
+      margin-bottom: 18px;
+    }
+    .eachartist nav {
+      li {
+        margin-right: 4px;
+      }
+      a {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+#adminevents {
+  @include column(15, last);
+  padding-top: 12px;
+}
+
+#contact {
+  @include prepend(10);
+  padding-left: 319px;
+  position: relative;
+  top: 7%;
+  address {
+    margin-bottom: 18px;
+  }
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+.main_content {
+  height: 500px;
+}
+
+.designedanddev {
+  margin-top: 200px;
+}

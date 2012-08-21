@@ -1,0 +1,21 @@
+// Place all the styles related to the Pieces controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'protractor';
+
+#newpiece {
+  @include column(13, last);
+}
+
+#pieceshow {
+  aside {
+    a:hover {
+      color: #be832b;
+    }
+  }
+}
+
+#editpiece {
+  @include column(13, last);
+}

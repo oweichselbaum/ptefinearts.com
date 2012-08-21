@@ -1,0 +1,109 @@
+// Grid
+// Sets grid column and gutter width 
+@import "extras/config/gridsettings";
+
+// Grid Mixins
+// .showgrid mixin to display a grid and analogous class
+@mixin showgrid {
+  background: url('grid.png');
+}
+
+.showgrid {
+  background: url('grid.png');
+}
+
+// Overall grid container size, defaults to 950px 
+@mixin container {
+  width: $container-size;
+  margin: 0 auto;
+}
+
+// Column mixin to define how wide each column is depending on the argument that is passed to it
+// Second argument is a boolean value to determine whether it is the last column in a row, setting the right margin to 0px
+@mixin column($n, $last: false) {
+  width: $grid-width * $n + $grid-margin * ($n - 1); 
+  float: left;
+  margin-right: 10px;
+  @if $n == 24 {
+    margin-right: 0px;
+  }
+  @if $last {
+    margin-right: 0px;     
+    display: inline-block;
+  }
+}
+
+// Span mixin to create an element that has grid width but displays block instead  of floated left
+@mixin span($n, $last: false) {
+  width: $grid-width * $n + $grid-margin * ($n - 1);
+  margin-right: 10px;
+  @if $n == 24 {
+    margin-right: 0px;
+  }
+  @if $last {
+    margin-right: 0px;
+  }
+}
+
+// Last mixin for legacy support
+@mixin last {
+  margin-right: 0px;
+}
+
+// Prepend mixin to add empty desired columns worth of padding to the left of an element
+@mixin prepend($n) {
+  padding-left: ($grid-width + $grid-margin) * $n; 
+}
+
+// Append mixin to add empty desired columns worth of padding to the right of an element
+@mixin append($n) {
+  padding-right: ($grid-width + $grid-margin) * $n;
+}
+
+// Push mixin to move an element the desired number of columns to the right via relative positioning
+@mixin push($n) {
+  margin-top: 0;
+  margin-right: -($grid-width + $grid-margin) * $n;
+  margin-bottom: 1.5em;
+  margin-left: ($grid-width + $grid-margin) * $n;
+  float: left;
+  position: relative; 
+}
+
+// Pull mixin to move an element the desired number of columns to the left via relative positioning
+@mixin pull($n) {
+  margin-left: -($grid-width + $grid-margin) * $n;
+  float: left;
+  position: relative;
+}
+
+@mixin border($color: #333) {
+  padding-right: 4px;
+  margin-right: 5px;
+  border-right: 1px solid $color;
+}
+
+.border {
+  @include border;
+}
+
+
+@mixin colborder($color: #333) {
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid $color;
+}
+
+.colborder {
+  @include colborder;
+}
+
+
+// CSS3
+@import "extras/config/css3settings";
+
+// Opacity Mixin
+@mixin opacity($opacity) {
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+  opacity: $opacity;
+}

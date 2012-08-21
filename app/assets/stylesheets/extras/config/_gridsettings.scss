@@ -1,0 +1,16 @@
+// Initial Settings
+
+// Number of grid columns
+$grid-columns: 24 !default;
+
+// Column Width
+$grid-width: 30px !default;
+
+// Margin between each column
+$grid-margin: 10px !default;
+
+// Width of each column plus the margin
+$grid-outer-width: $grid-width + $grid-margin;
+
+// Width of the entire container
+$container-size: $grid-outer-width * $grid-columns - $grid-margin;

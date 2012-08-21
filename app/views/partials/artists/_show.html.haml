@@ -1,0 +1,35 @@
+#artistshow 
+  %aside
+    %h3
+      = "#{@artist.firstname} #{@artist.lastname}"
+    %nav
+      %ul
+        - if @artist.displayname.nil?
+          %li
+            = link_to 'Biography', '#', :class => 'inactive'
+        - else
+          %li
+            = link_to 'Biography', '#', :class => 'active biographyshow'
+        %li
+          = link_to 'Back to artists', artists_path, :id => 'backto', :remote => true, :class => 'ajaxtransition'
+  %section{:class => "thumbs"}
+    - @artistpieces.each do |piece|
+      .eachthumb
+        = link_to image_tag(image_path("#{piece.thumbnail.url}"), :alt => piece.id), artist_piece_path(@artist, piece), :class => 'ajaxtransition', :remote => true 
+  %section.biography
+    %p
+      = @artist.displayname
+      %br
+      = @artist.livesin
+    %p
+      = @artist.para1
+    %p
+      = @artist.para2
+    %p
+      = @artist.para3
+    %p
+      = @artist.para4
+    %p
+      = @artist.pata5
+
+
