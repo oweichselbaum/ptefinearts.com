@@ -1,5 +1,5 @@
 set :application, "pte"
-set :repository,  "https://nycdavid@github.com/nycdavid/PTE.git"
+set :repository,  "https://github.com/ptefinearts/ptefinearts.com.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -11,7 +11,7 @@ role :app, "ptefinearts.webfactional.com"                          # This may be
 role :db,  "ptefinearts.webfactional.com", :primary => true # This is where Rails migrations will run
 
 set :user, "ptefinearts"
-set :scm_username, "nycdavid"
+set :scm_username, "ptefinearts"
 set :use_sudo, false
 default_run_options[:pty] = true
 

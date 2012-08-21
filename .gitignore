@@ -1,0 +1,14 @@
+.idea/.generators
+.idea/.name
+.idea/.rakeTasks
+.idea/dataSources.ids
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/ptefinearts.com.iml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/dataSources.xml
+log/development.log
+tmp/pids/server.pid
